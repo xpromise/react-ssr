@@ -1,23 +1,20 @@
-import Home from '../components/home';
-import Login from '../components/login';
+import App from '../App';
+import Home from '../containers/home';
+import Login from '../containers/login';
 
 export default [{
-    title: '首页',
-    path: '/',
-    component: Home,
-    exact: true,
-    loadData: Home.loadData,
-    // routes: [{
-    //   title: '测试',
-    //   path: '/test',
-    //   component: Login,
-    //   exact: true,
-    // }, ]
-  },
-  {
-    title: '登录',
-    path: '/login',
-    component: Login,
-    exact: true,
-  },
-]
+  path: '/',
+  component: App,
+  routes: [{
+      path: '/',
+      component: Home,
+      exact: true,
+      loadData: Home.loadData,
+    },
+    {
+      path: '/login',
+      component: Login,
+      exact: true,
+    },
+  ]
+}]

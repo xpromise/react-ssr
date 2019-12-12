@@ -9,7 +9,7 @@ import serverRequest from '../server/request';
 
 import {
   reducer as homeReducer
-} from '../components/home/store';
+} from '../containers/home/store';
 
 const reducers = combineReducers({
   news: homeReducer

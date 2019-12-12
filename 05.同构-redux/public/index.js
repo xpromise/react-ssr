@@ -897,6 +897,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 
 /***/ }),
 
+/***/ "./node_modules/react-router-config/esm/react-router-config.js":
+/*!*********************************************************************!*\
+  !*** ./node_modules/react-router-config/esm/react-router-config.js ***!
+  \*********************************************************************/
+/*! exports provided: matchRoutes, renderRoutes */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"matchRoutes\", function() { return matchRoutes; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"renderRoutes\", function() { return renderRoutes; });\n/* harmony import */ var react_router__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-router */ \"./node_modules/react-router/esm/react-router.js\");\n/* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/extends */ \"./node_modules/@babel/runtime/helpers/esm/extends.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);\n\n\n\n\nfunction matchRoutes(routes, pathname,\n/*not public API*/\nbranch) {\n  if (branch === void 0) {\n    branch = [];\n  }\n\n  routes.some(function (route) {\n    var match = route.path ? Object(react_router__WEBPACK_IMPORTED_MODULE_0__[\"matchPath\"])(pathname, route) : branch.length ? branch[branch.length - 1].match // use parent match\n    : react_router__WEBPACK_IMPORTED_MODULE_0__[\"Router\"].computeRootMatch(pathname); // use default \"root\" match\n\n    if (match) {\n      branch.push({\n        route: route,\n        match: match\n      });\n\n      if (route.routes) {\n        matchRoutes(route.routes, pathname, branch);\n      }\n    }\n\n    return match;\n  });\n  return branch;\n}\n\nfunction renderRoutes(routes, extraProps, switchProps) {\n  if (extraProps === void 0) {\n    extraProps = {};\n  }\n\n  if (switchProps === void 0) {\n    switchProps = {};\n  }\n\n  return routes ? react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react_router__WEBPACK_IMPORTED_MODULE_0__[\"Switch\"], switchProps, routes.map(function (route, i) {\n    return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react_router__WEBPACK_IMPORTED_MODULE_0__[\"Route\"], {\n      key: route.key || i,\n      path: route.path,\n      exact: route.exact,\n      strict: route.strict,\n      render: function render(props) {\n        return route.render ? route.render(Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__[\"default\"])({}, props, {}, extraProps, {\n          route: route\n        })) : react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(route.component, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__[\"default\"])({}, props, extraProps, {\n          route: route\n        }));\n      }\n    });\n  })) : null;\n}\n\n\n\n//# sourceURL=webpack:///./node_modules/react-router-config/esm/react-router-config.js?");
+
+/***/ }),
+
 /***/ "./node_modules/react-router-dom/esm/react-router-dom.js":
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
@@ -1141,7 +1153,7 @@ eval("module.exports = function (originalModule) {\n  if (!originalModule.webpac
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return App; });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ \"./node_modules/react-router-dom/esm/react-router-dom.js\");\n/* harmony import */ var _config_routes__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./config/routes */ \"./src/config/routes.js\");\nfunction _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }\n\n\n\n\nfunction App() {\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"ul\", null, _config_routes__WEBPACK_IMPORTED_MODULE_2__[\"default\"].map(route => {\n    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"li\", {\n      key: route.path\n    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__[\"Link\"], {\n      to: route.path\n    }, route.title));\n  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__[\"Switch\"], null, _config_routes__WEBPACK_IMPORTED_MODULE_2__[\"default\"].map(({\n    title,\n    ...rest\n  }) => {\n    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__[\"Route\"], _extends({}, rest, {\n      key: rest.path\n    }));\n  })));\n}\n\n//# sourceURL=webpack:///./src/App.jsx?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return App; });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _components_header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/header */ \"./src/components/header/index.jsx\");\n/* harmony import */ var react_router_config__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-config */ \"./node_modules/react-router-config/esm/react-router-config.js\");\n\n\n\nfunction App(props) {\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_header__WEBPACK_IMPORTED_MODULE_1__[\"default\"], null), Object(react_router_config__WEBPACK_IMPORTED_MODULE_2__[\"renderRoutes\"])(props.route.routes));\n}\n\n//# sourceURL=webpack:///./src/App.jsx?");
 
 /***/ }),
 
@@ -1153,7 +1165,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ \"./node_modules/react-dom/index.js\");\n/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ \"./node_modules/react-router-dom/esm/react-router-dom.js\");\n/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-redux */ \"./node_modules/react-redux/es/index.js\");\n/* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../store */ \"./src/store/index.js\");\n/* harmony import */ var _App__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../App */ \"./src/App.jsx\");\n\n\n\n\n\n\nreact_dom__WEBPACK_IMPORTED_MODULE_1___default.a.hydrate(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_redux__WEBPACK_IMPORTED_MODULE_3__[\"Provider\"], {\n  store: Object(_store__WEBPACK_IMPORTED_MODULE_4__[\"getClientStore\"])()\n}, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__[\"BrowserRouter\"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_App__WEBPACK_IMPORTED_MODULE_5__[\"default\"], null))), document.getElementById('root'));\n\n//# sourceURL=webpack:///./src/client/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ \"./node_modules/react-dom/index.js\");\n/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ \"./node_modules/react-router-dom/esm/react-router-dom.js\");\n/* harmony import */ var react_router_config__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-config */ \"./node_modules/react-router-config/esm/react-router-config.js\");\n/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-redux */ \"./node_modules/react-redux/es/index.js\");\n/* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../store */ \"./src/store/index.js\");\n/* harmony import */ var _config_routes__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../config/routes */ \"./src/config/routes.js\");\n\n\n\n\n\n\n\nreact_dom__WEBPACK_IMPORTED_MODULE_1___default.a.hydrate(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_redux__WEBPACK_IMPORTED_MODULE_4__[\"Provider\"], {\n  store: Object(_store__WEBPACK_IMPORTED_MODULE_5__[\"getClientStore\"])()\n}, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__[\"BrowserRouter\"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__[\"Switch\"], null, Object(react_router_config__WEBPACK_IMPORTED_MODULE_3__[\"renderRoutes\"])(_config_routes__WEBPACK_IMPORTED_MODULE_6__[\"default\"])))), document.getElementById('root'));\n\n//# sourceURL=webpack:///./src/client/index.js?");
 
 /***/ }),
 
@@ -1169,75 +1181,15 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var axio
 
 /***/ }),
 
-/***/ "./src/components/home/index.jsx":
-/*!***************************************!*\
-  !*** ./src/components/home/index.jsx ***!
-  \***************************************/
+/***/ "./src/components/header/index.jsx":
+/*!*****************************************!*\
+  !*** ./src/components/header/index.jsx ***!
+  \*****************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ \"./node_modules/react-redux/es/index.js\");\n/* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./store */ \"./src/components/home/store/index.js\");\nfunction _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }\n\n\n\n\n\nclass Home extends react__WEBPACK_IMPORTED_MODULE_0__[\"Component\"] {\n  constructor(...args) {\n    super(...args);\n\n    _defineProperty(this, \"state\", {\n      loading: false\n    });\n\n    _defineProperty(this, \"handleClick\", () => {\n      console.log(\"戳我~~~~\");\n    });\n  }\n\n  // componentDidMount生命周期函数在服务器渲染时不会调用\n  // 导致数据不能加载\n  componentDidMount() {\n    if (!this.props.news.length) {\n      this.props.getNewsAsync();\n    }\n  }\n\n  render() {\n    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"h3\", null, \"home...\"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"ul\", null, this.props.news.map(item => react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"li\", {\n      key: item.id\n    }, item.title))));\n  }\n\n} // 异步加载数据\n\n\nHome.loadData = store => {\n  return store.dispatch(Object(_store__WEBPACK_IMPORTED_MODULE_2__[\"getNewsAsync\"])());\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__[\"connect\"])(state => ({\n  news: state.news,\n  state: state\n}), {\n  getNewsAsync: _store__WEBPACK_IMPORTED_MODULE_2__[\"getNewsAsync\"]\n})(Home));\n\n//# sourceURL=webpack:///./src/components/home/index.jsx?");
-
-/***/ }),
-
-/***/ "./src/components/home/store/action-creators.js":
-/*!******************************************************!*\
-  !*** ./src/components/home/store/action-creators.js ***!
-  \******************************************************/
-/*! exports provided: getNewsAsync */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"getNewsAsync\", function() { return getNewsAsync; });\n/* harmony import */ var _action_types__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./action-types */ \"./src/components/home/store/action-types.js\");\n\n\nconst getNewsSuccess = news => ({\n  type: _action_types__WEBPACK_IMPORTED_MODULE_0__[\"GET_NEWS_SUCCESS\"],\n  data: news\n});\n\nconst getNewsAsync = () => {\n  // reqNewsList 如果在客户端当前路径是 http://localhost:3000 所以 /api --> http://localhost:3000/api\n  // 如果在服务端因为没有地址，所以默认是 127.0.0.1:80 所以 /api --> 127.0.0.1:80/api\n  // 访问就出错了\n  return (dispatch, getState, axiosInstance) => {\n    return axiosInstance.get('/news.json').then(res => {\n      dispatch(getNewsSuccess(res));\n    }).catch(err => {\n      console.log('请求news失败', err);\n    });\n  };\n};\n\n//# sourceURL=webpack:///./src/components/home/store/action-creators.js?");
-
-/***/ }),
-
-/***/ "./src/components/home/store/action-types.js":
-/*!***************************************************!*\
-  !*** ./src/components/home/store/action-types.js ***!
-  \***************************************************/
-/*! exports provided: GET_NEWS_SUCCESS */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"GET_NEWS_SUCCESS\", function() { return GET_NEWS_SUCCESS; });\nconst GET_NEWS_SUCCESS = 'GET_NEWS_SUCCESS';\n\n//# sourceURL=webpack:///./src/components/home/store/action-types.js?");
-
-/***/ }),
-
-/***/ "./src/components/home/store/index.js":
-/*!********************************************!*\
-  !*** ./src/components/home/store/index.js ***!
-  \********************************************/
-/*! exports provided: getNewsAsync, reducer */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _action_creators__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./action-creators */ \"./src/components/home/store/action-creators.js\");\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"getNewsAsync\", function() { return _action_creators__WEBPACK_IMPORTED_MODULE_0__[\"getNewsAsync\"]; });\n\n/* harmony import */ var _reducer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./reducer */ \"./src/components/home/store/reducer.js\");\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"reducer\", function() { return _reducer__WEBPACK_IMPORTED_MODULE_1__[\"default\"]; });\n\n/*\r\n  此模块为了简化引入reducer和action-creators\r\n*/\n\n\n\n\n//# sourceURL=webpack:///./src/components/home/store/index.js?");
-
-/***/ }),
-
-/***/ "./src/components/home/store/reducer.js":
-/*!**********************************************!*\
-  !*** ./src/components/home/store/reducer.js ***!
-  \**********************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _action_types__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./action-types */ \"./src/components/home/store/action-types.js\");\n\nconst initState = [];\n\nfunction news(prevState = initState, action) {\n  switch (action.type) {\n    case _action_types__WEBPACK_IMPORTED_MODULE_0__[\"GET_NEWS_SUCCESS\"]:\n      return action.data;\n\n    default:\n      return prevState;\n  }\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (news);\n\n//# sourceURL=webpack:///./src/components/home/store/reducer.js?");
-
-/***/ }),
-
-/***/ "./src/components/login/index.jsx":
-/*!****************************************!*\
-  !*** ./src/components/login/index.jsx ***!
-  \****************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return Login; });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n\nfunction Login() {\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", null, \"Login...\");\n}\n\n//# sourceURL=webpack:///./src/components/login/index.jsx?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return Header; });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ \"./node_modules/react-router-dom/esm/react-router-dom.js\");\n\n\nfunction Header() {\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"ul\", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"li\", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__[\"Link\"], {\n    to: \"/\"\n  }, \"\\u9996\\u9875\")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"li\", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__[\"Link\"], {\n    to: \"/login\"\n  }, \"\\u767B\\u5F55\")));\n}\n\n//# sourceURL=webpack:///./src/components/header/index.jsx?");
 
 /***/ }),
 
@@ -1249,7 +1201,79 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _components_home__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/home */ \"./src/components/home/index.jsx\");\n/* harmony import */ var _components_login__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/login */ \"./src/components/login/index.jsx\");\n\n\n/* harmony default export */ __webpack_exports__[\"default\"] = ([{\n  title: '首页',\n  path: '/',\n  component: _components_home__WEBPACK_IMPORTED_MODULE_0__[\"default\"],\n  exact: true,\n  loadData: _components_home__WEBPACK_IMPORTED_MODULE_0__[\"default\"].loadData // routes: [{\n  //   title: '测试',\n  //   path: '/test',\n  //   component: Login,\n  //   exact: true,\n  // }, ]\n\n}, {\n  title: '登录',\n  path: '/login',\n  component: _components_login__WEBPACK_IMPORTED_MODULE_1__[\"default\"],\n  exact: true\n}]);\n\n//# sourceURL=webpack:///./src/config/routes.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _App__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../App */ \"./src/App.jsx\");\n/* harmony import */ var _containers_home__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../containers/home */ \"./src/containers/home/index.jsx\");\n/* harmony import */ var _containers_login__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../containers/login */ \"./src/containers/login/index.jsx\");\n\n\n\n/* harmony default export */ __webpack_exports__[\"default\"] = ([{\n  path: '/',\n  component: _App__WEBPACK_IMPORTED_MODULE_0__[\"default\"],\n  routes: [{\n    path: '/',\n    component: _containers_home__WEBPACK_IMPORTED_MODULE_1__[\"default\"],\n    exact: true,\n    loadData: _containers_home__WEBPACK_IMPORTED_MODULE_1__[\"default\"].loadData\n  }, {\n    path: '/login',\n    component: _containers_login__WEBPACK_IMPORTED_MODULE_2__[\"default\"],\n    exact: true\n  }]\n}]);\n\n//# sourceURL=webpack:///./src/config/routes.js?");
+
+/***/ }),
+
+/***/ "./src/containers/home/index.jsx":
+/*!***************************************!*\
+  !*** ./src/containers/home/index.jsx ***!
+  \***************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ \"./node_modules/react-redux/es/index.js\");\n/* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./store */ \"./src/containers/home/store/index.js\");\nfunction _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }\n\n\n\n\n\nclass Home extends react__WEBPACK_IMPORTED_MODULE_0__[\"Component\"] {\n  constructor(...args) {\n    super(...args);\n\n    _defineProperty(this, \"state\", {\n      loading: false\n    });\n\n    _defineProperty(this, \"handleClick\", () => {\n      console.log(\"戳我~~~~\");\n    });\n  }\n\n  // componentDidMount生命周期函数在服务器渲染时不会调用\n  // 导致数据不能加载\n  componentDidMount() {\n    if (!this.props.news.length) {\n      this.props.getNewsAsync();\n    }\n  }\n\n  render() {\n    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"h3\", null, \"home...\"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"ul\", null, this.props.news.map(item => react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"li\", {\n      key: item.id\n    }, item.title))));\n  }\n\n} // 异步加载数据\n\n\nHome.loadData = store => {\n  return store.dispatch(Object(_store__WEBPACK_IMPORTED_MODULE_2__[\"getNewsAsync\"])());\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__[\"connect\"])(state => ({\n  news: state.news,\n  state: state\n}), {\n  getNewsAsync: _store__WEBPACK_IMPORTED_MODULE_2__[\"getNewsAsync\"]\n})(Home));\n\n//# sourceURL=webpack:///./src/containers/home/index.jsx?");
+
+/***/ }),
+
+/***/ "./src/containers/home/store/action-creators.js":
+/*!******************************************************!*\
+  !*** ./src/containers/home/store/action-creators.js ***!
+  \******************************************************/
+/*! exports provided: getNewsAsync */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"getNewsAsync\", function() { return getNewsAsync; });\n/* harmony import */ var _action_types__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./action-types */ \"./src/containers/home/store/action-types.js\");\n\n\nconst getNewsSuccess = news => ({\n  type: _action_types__WEBPACK_IMPORTED_MODULE_0__[\"GET_NEWS_SUCCESS\"],\n  data: news\n});\n\nconst getNewsAsync = () => {\n  // reqNewsList 如果在客户端当前路径是 http://localhost:3000 所以 /api --> http://localhost:3000/api\n  // 如果在服务端因为没有地址，所以默认是 127.0.0.1:80 所以 /api --> 127.0.0.1:80/api\n  // 访问就出错了\n  return (dispatch, getState, axiosInstance) => {\n    return axiosInstance.get('/news.json').then(res => {\n      dispatch(getNewsSuccess(res));\n    }).catch(err => {\n      console.log('请求news失败', err);\n    });\n  };\n};\n\n//# sourceURL=webpack:///./src/containers/home/store/action-creators.js?");
+
+/***/ }),
+
+/***/ "./src/containers/home/store/action-types.js":
+/*!***************************************************!*\
+  !*** ./src/containers/home/store/action-types.js ***!
+  \***************************************************/
+/*! exports provided: GET_NEWS_SUCCESS */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"GET_NEWS_SUCCESS\", function() { return GET_NEWS_SUCCESS; });\nconst GET_NEWS_SUCCESS = 'GET_NEWS_SUCCESS';\n\n//# sourceURL=webpack:///./src/containers/home/store/action-types.js?");
+
+/***/ }),
+
+/***/ "./src/containers/home/store/index.js":
+/*!********************************************!*\
+  !*** ./src/containers/home/store/index.js ***!
+  \********************************************/
+/*! exports provided: getNewsAsync, reducer */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _action_creators__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./action-creators */ \"./src/containers/home/store/action-creators.js\");\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"getNewsAsync\", function() { return _action_creators__WEBPACK_IMPORTED_MODULE_0__[\"getNewsAsync\"]; });\n\n/* harmony import */ var _reducer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./reducer */ \"./src/containers/home/store/reducer.js\");\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"reducer\", function() { return _reducer__WEBPACK_IMPORTED_MODULE_1__[\"default\"]; });\n\n/*\r\n  此模块为了简化引入reducer和action-creators\r\n*/\n\n\n\n\n//# sourceURL=webpack:///./src/containers/home/store/index.js?");
+
+/***/ }),
+
+/***/ "./src/containers/home/store/reducer.js":
+/*!**********************************************!*\
+  !*** ./src/containers/home/store/reducer.js ***!
+  \**********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _action_types__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./action-types */ \"./src/containers/home/store/action-types.js\");\n\nconst initState = [];\n\nfunction news(prevState = initState, action) {\n  switch (action.type) {\n    case _action_types__WEBPACK_IMPORTED_MODULE_0__[\"GET_NEWS_SUCCESS\"]:\n      return action.data;\n\n    default:\n      return prevState;\n  }\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (news);\n\n//# sourceURL=webpack:///./src/containers/home/store/reducer.js?");
+
+/***/ }),
+
+/***/ "./src/containers/login/index.jsx":
+/*!****************************************!*\
+  !*** ./src/containers/login/index.jsx ***!
+  \****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return Login; });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n\nfunction Login() {\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", null, \"Login...\");\n}\n\n//# sourceURL=webpack:///./src/containers/login/index.jsx?");
 
 /***/ }),
 
@@ -1273,7 +1297,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var axio
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"getClientStore\", function() { return getClientStore; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"getServerStore\", function() { return getServerStore; });\n/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ \"./node_modules/redux/es/redux.js\");\n/* harmony import */ var redux_thunk__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! redux-thunk */ \"./node_modules/redux-thunk/es/index.js\");\n/* harmony import */ var _client_request__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../client/request */ \"./src/client/request.js\");\n/* harmony import */ var _server_request__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../server/request */ \"./src/server/request.js\");\n/* harmony import */ var _components_home_store__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/home/store */ \"./src/components/home/store/index.js\");\n\n\n\n\n\nconst reducers = Object(redux__WEBPACK_IMPORTED_MODULE_0__[\"combineReducers\"])({\n  news: _components_home_store__WEBPACK_IMPORTED_MODULE_4__[\"reducer\"]\n});\nfunction getClientStore() {\n  const preloadedState = window.__INITIAL_STATE__ || {}; // preloadedState数据注水，初始化store数据\n\n  return Object(redux__WEBPACK_IMPORTED_MODULE_0__[\"createStore\"])(reducers, preloadedState, Object(redux__WEBPACK_IMPORTED_MODULE_0__[\"applyMiddleware\"])(redux_thunk__WEBPACK_IMPORTED_MODULE_1__[\"default\"].withExtraArgument(_client_request__WEBPACK_IMPORTED_MODULE_2__[\"default\"])));\n}\nfunction getServerStore() {\n  return Object(redux__WEBPACK_IMPORTED_MODULE_0__[\"createStore\"])(reducers, Object(redux__WEBPACK_IMPORTED_MODULE_0__[\"applyMiddleware\"])(redux_thunk__WEBPACK_IMPORTED_MODULE_1__[\"default\"].withExtraArgument(_server_request__WEBPACK_IMPORTED_MODULE_3__[\"default\"])));\n}\n\n//# sourceURL=webpack:///./src/store/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"getClientStore\", function() { return getClientStore; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"getServerStore\", function() { return getServerStore; });\n/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ \"./node_modules/redux/es/redux.js\");\n/* harmony import */ var redux_thunk__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! redux-thunk */ \"./node_modules/redux-thunk/es/index.js\");\n/* harmony import */ var _client_request__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../client/request */ \"./src/client/request.js\");\n/* harmony import */ var _server_request__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../server/request */ \"./src/server/request.js\");\n/* harmony import */ var _containers_home_store__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../containers/home/store */ \"./src/containers/home/store/index.js\");\n\n\n\n\n\nconst reducers = Object(redux__WEBPACK_IMPORTED_MODULE_0__[\"combineReducers\"])({\n  news: _containers_home_store__WEBPACK_IMPORTED_MODULE_4__[\"reducer\"]\n});\nfunction getClientStore() {\n  const preloadedState = window.__INITIAL_STATE__ || {}; // preloadedState数据注水，初始化store数据\n\n  return Object(redux__WEBPACK_IMPORTED_MODULE_0__[\"createStore\"])(reducers, preloadedState, Object(redux__WEBPACK_IMPORTED_MODULE_0__[\"applyMiddleware\"])(redux_thunk__WEBPACK_IMPORTED_MODULE_1__[\"default\"].withExtraArgument(_client_request__WEBPACK_IMPORTED_MODULE_2__[\"default\"])));\n}\nfunction getServerStore() {\n  return Object(redux__WEBPACK_IMPORTED_MODULE_0__[\"createStore\"])(reducers, Object(redux__WEBPACK_IMPORTED_MODULE_0__[\"applyMiddleware\"])(redux_thunk__WEBPACK_IMPORTED_MODULE_1__[\"default\"].withExtraArgument(_server_request__WEBPACK_IMPORTED_MODULE_3__[\"default\"])));\n}\n\n//# sourceURL=webpack:///./src/store/index.js?");
 
 /***/ })
 

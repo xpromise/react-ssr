@@ -2,20 +2,23 @@ import React from 'react';
 import {
   renderToString
 } from 'react-dom/server';
-import {StaticRouter} from 'react-router-dom';
+import { StaticRouter, Switch } from 'react-router-dom';
+import { renderRoutes } from 'react-router-config';
 import { Provider } from "react-redux";
-
-
-import App from '../App';
+import routes from '../config/routes';
 
 export const render = (store, req) => {
 
   const preloadedState = store.getState();
   
   const content = renderToString(
-    <Provider store={store} >
-      <StaticRouter location={req.path} context={{}}>
-        <App />
+    <Provider store={store}>
+      <StaticRouter location={req.path}>
+        <Switch>
+          {
+            renderRoutes(routes)
+          }
+        </Switch>
       </StaticRouter>
     </Provider>
   );
@@ -36,5 +39,5 @@ export const render = (store, req) => {
     </script>
     <script src="/index.js"></script>
   </body>
-  </html>`
+  </html>`;
 }
