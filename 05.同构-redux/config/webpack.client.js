@@ -6,7 +6,7 @@ module.exports = {
   mode: 'development',
   entry: './src/client/index.js',
   output: {
-    path: resolve(__dirname, '../build/public'),
+    path: resolve(__dirname, '../public'),
     filename: 'index.js'
   },
   module: {

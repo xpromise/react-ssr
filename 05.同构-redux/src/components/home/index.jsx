@@ -10,9 +10,12 @@ class Home extends Component {
   handleClick = () => {
     console.log("戳我~~~~");
   };
-
+  // componentDidMount生命周期函数在服务器渲染时不会调用
+  // 导致数据不能加载
   componentDidMount() {
-    this.props.getNewsAsync();
+    if (!this.props.news.length) {
+      this.props.getNewsAsync();
+    }
   }
 
   render() {
@@ -29,4 +32,11 @@ class Home extends Component {
   }
 }
 
-export default connect(state => ({ news: state.news }), { getNewsAsync })(Home);
+// 异步加载数据
+Home.loadData = store => {
+  return store.dispatch(getNewsAsync());
+};
+
+export default connect(state => ({ news: state.news, state: state }), {
+  getNewsAsync
+})(Home);

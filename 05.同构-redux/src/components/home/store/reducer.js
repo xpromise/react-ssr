@@ -9,7 +9,7 @@ function news(prevState = initState, action) {
     case GET_NEWS_SUCCESS:
       return action.data;
     default:
-      return prevState
+      return prevState;
   }
 }
 

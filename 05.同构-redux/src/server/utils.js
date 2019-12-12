@@ -4,15 +4,17 @@ import {
 } from 'react-dom/server';
 import {StaticRouter} from 'react-router-dom';
 import { Provider } from "react-redux";
-import getStore from "../store";
+
 
 import App from '../App';
 
-export const render = (req) => {
+export const render = (store, req) => {
+
+  const preloadedState = store.getState();
   
   const content = renderToString(
-    <Provider store={getStore()}>
-      <StaticRouter location={req.path}>
+    <Provider store={store} >
+      <StaticRouter location={req.path} context={{}}>
         <App />
       </StaticRouter>
     </Provider>
@@ -28,6 +30,10 @@ export const render = (req) => {
   </head>
   <body>
     <div id="root">${content}</div>
+    <script>
+      // 数据注水~
+      window.__INITIAL_STATE__ = ${JSON.stringify(preloadedState)}
+    </script>
     <script src="/index.js"></script>
   </body>
   </html>`
