@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { Helmet } from "react-helmet";
 import { getNewsAsync } from "./store";
 
 class Home extends Component {
@@ -21,6 +22,10 @@ class Home extends Component {
   render() {
     return (
       <div>
+        <Helmet>
+          <title>首页~~我的首页我做主</title>
+          <meta name="description" content="首页~~我的首页我做主~~~~~" />
+        </Helmet>
         <h3>home...</h3>
         <ul>
           {this.props.news.map(item => (
@@ -37,6 +42,6 @@ Home.loadData = store => {
   return store.dispatch(getNewsAsync());
 };
 
-export default connect(state => ({ news: state.news, state: state }), {
+export default connect(state => ({ news: state.news }), {
   getNewsAsync
 })(Home);

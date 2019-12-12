@@ -5,11 +5,14 @@ import {
 import { StaticRouter, Switch } from 'react-router-dom';
 import { renderRoutes } from 'react-router-config';
 import { Provider } from "react-redux";
+import { Helmet } from "react-helmet";
 import routes from '../config/routes';
 
 export const render = (store, req) => {
 
   const preloadedState = store.getState();
+
+  const helmet = Helmet.renderStatic();
   
   const content = renderToString(
     <Provider store={store}>
@@ -29,7 +32,8 @@ export const render = (store, req) => {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>React-SSR</title>
+    ${helmet.title.toString()}
+    ${helmet.meta.toString()}
   </head>
   <body>
     <div id="root">${content}</div>

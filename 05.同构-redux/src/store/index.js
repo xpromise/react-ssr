@@ -10,9 +10,13 @@ import serverRequest from '../server/request';
 import {
   reducer as homeReducer
 } from '../containers/home/store';
+import {
+  reducer as loginReducer
+} from '../containers/header/store';
 
 const reducers = combineReducers({
-  news: homeReducer
+  news: homeReducer,
+  login: loginReducer
 })
 
 export function getClientStore() {
